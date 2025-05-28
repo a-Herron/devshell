@@ -14,6 +14,7 @@
     devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
             go
+            gopls
             gofumpt
             golangci-lint
             tree-sitter

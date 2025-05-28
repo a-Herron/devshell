@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Devshell with nvim config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";

@@ -10,3 +10,6 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 
 source <(fzf --zsh)
+
+alias g="git"
+

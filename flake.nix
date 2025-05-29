@@ -17,6 +17,7 @@
       };
     });
     nvimAppName = "mynvim";
+
   in {
     devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
@@ -36,19 +37,28 @@
             glibc
             rsync
             fd
+            fzf
             sqlite
         ];
 
         shellHook = ''
             export NVIM_APPNAME=${nvimAppName}
+            export ZDOTDIR="$HOME/.config/zsh/"
+            mkdir -p "$ZDOTDIR"
+            cp -f "${self}/.zshrc" "$HOME/.config/zsh/.zshrc"
+
             mkdir -p "$HOME/.config/$NVIM_APPNAME"
-            
+
             rsync -av --delete "${self}/nvim/" "$HOME/.config/$NVIM_APPNAME/"
             chmod -R u+rw "$HOME/.config/$NVIM_APPNAME/"
 
-            zsh
+            exec zsh
         '';
-
     };
+
+    packages.${system}.dev = pkgs.writeShellScriptBin "dev" ''
+        exec nix develop ${self}#default
+    '';
+
   };
 }

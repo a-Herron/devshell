@@ -1,0 +1,12 @@
+export ZSH="$HOME/.oh-my-zsh"
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+ZSH_THEME="avit"
+
+plugins=(git fzf)
+
+source $ZSH/oh-my-zsh.sh
+
+set -o vi
+
+source <(fzf --zsh)

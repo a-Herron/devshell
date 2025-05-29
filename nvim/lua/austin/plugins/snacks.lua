@@ -41,6 +41,6 @@ return {
         {"gt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto type definition"},
 
         {"<leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode"},
-        {"<leader>t", function() Snacks.terminal() end, desc = "Toggle terminal"}
+        {"<leader>t", function() Snacks.terminal() end, desc = "Toggle terminal"},
     }
 }

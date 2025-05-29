@@ -10,7 +10,7 @@ return {
          },
          completion = {
              documentation = { auto_show = true },
-             ghost_text = { enabled = true}
+             ghost_text = { enabled = false}
          },
          sources = {
              default = { 'lsp', 'path', 'snippets', 'buffer' },

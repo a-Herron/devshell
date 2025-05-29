@@ -28,8 +28,6 @@ return {
         {"sf", function() Snacks.picker.files() end, desc = "Find Files"},
         {"sg", function() Snacks.picker.git_files() end, desc = "Find Git Files"},
         {"sb", function() Snacks.picker.buffers() end, desc = "Find Buffers"},
-
-
         {"st", function() Snacks.picker.grep() end, desc = "Search grep"},
         {"sw", function() Snacks.picker.grep_word() end, desc = "Search words"},
         {"sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps"},

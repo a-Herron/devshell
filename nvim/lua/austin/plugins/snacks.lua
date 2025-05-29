@@ -25,17 +25,18 @@ return {
     },
     keys = {
         {"<leader>e", function() Snacks.explorer() end, desc = "File explorer"},
-        {"<leader>ff", function() Snacks.picker.files() end, desc = "Find Files"},
-        {"<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files"},
-        {"<leader>fb", function() Snacks.picker.buffers() end, desc = "Find Buffers"},
+        {"sf", function() Snacks.picker.files() end, desc = "Find Files"},
+        {"sg", function() Snacks.picker.git_files() end, desc = "Find Git Files"},
+        {"sb", function() Snacks.picker.buffers() end, desc = "Find Buffers"},
 
 
-        {"<leader>sg", function() Snacks.picker.grep() end, desc = "Search grep"},
-        {"<leader>sw", function() Snacks.picker.grep_word() end, desc = "Search words"},
-        {"<leader>sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps"},
-        {"<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Search diagnostics"},
-        {"<leader>sq", function() Snacks.picker.qflist() end, desc = "Search quickfix list"},
-        {"<leader>su", function() Snacks.picker.undo() end, desc = "Undo history"},
+        {"st", function() Snacks.picker.grep() end, desc = "Search grep"},
+        {"sw", function() Snacks.picker.grep_word() end, desc = "Search words"},
+        {"sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps"},
+        {"sd", function() Snacks.picker.diagnostics() end, desc = "Search diagnostics"},
+        {"sq", function() Snacks.picker.qflist() end, desc = "Search quickfix list"},
+        {"su", function() Snacks.picker.undo() end, desc = "Undo history"},
+
         {"<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes"},
 
         {"gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition"},

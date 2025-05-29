@@ -43,6 +43,12 @@ return {
         {"gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation"},
         {"gt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto type definition"},
 
+        {"<leader>gs", function() Snacks.picker.git_status() end, desc = "Git status"},
+        {"<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git branches"},
+        {"<leader>gl", function() Snacks.picker.git_log() end, desc = "Git log"},
+        {"<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git log line"},
+        {"<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git stash"},
+        {"<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git diff (Hunks)"},
         {"<leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode"},
         {"<leader>t", function() Snacks.terminal() end, desc = "Toggle terminal"},
     }

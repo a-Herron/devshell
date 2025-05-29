@@ -5,11 +5,15 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         scope = { enabled = true },
-        explorer = { enabled = true },
+        explorer = { 
+            enabled = true,
+        },
         indent = { enabled = true },
         input = { enabled = true },
         picker = { 
             enabled = true,
+            hidden = true,
+            ignored =true,
             sources = {
                 explorer = { auto_close = true },
             }

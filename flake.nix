@@ -29,6 +29,7 @@
             nodejs_24
             git
             zsh
+            oh-my-zsh
             neovim
 
             gcc
@@ -38,12 +39,15 @@
             rsync
             fd
             fzf
+            fzf-zsh
             sqlite
         ];
 
         shellHook = ''
+            export ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
             export NVIM_APPNAME=${nvimAppName}
             export ZDOTDIR="$HOME/.config/zsh/"
+
             mkdir -p "$ZDOTDIR"
             cp -f "${self}/.zshrc" "$HOME/.config/zsh/.zshrc"
 

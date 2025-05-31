@@ -1,0 +1,10 @@
+{
+  "enn": {
+    "prefix": "ennil",
+    "body": [
+      "if err != nil {",
+      "",
+      "}"
+    ]
+  }
+}

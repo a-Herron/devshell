@@ -3,7 +3,7 @@
     "prefix": "enn",
     "body": [
       "if err != nil {",
-      "",
+      "    ${1:return nil, err}",
       "}"
     ]
   }

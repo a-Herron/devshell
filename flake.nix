@@ -38,6 +38,7 @@
             glibc
             rsync
             fd
+            ripgrep
             fzf
             fzf-zsh
             sqlite

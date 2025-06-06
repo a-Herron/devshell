@@ -2,12 +2,12 @@
   description = "Devshell with nvim config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs }: 
+  outputs = { self, nixpkgs, utils }: utils.lib.eachDefaultSystem (system: 
   let
-    system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
     go1_24_2 = pkgs.go.overrideAttrs (oldAttrs: {
       version = "1.24.2";
@@ -19,7 +19,7 @@
     nvimAppName = "mynvim";
 
   in {
-    devShells.${system}.default = pkgs.mkShell {
+    devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
             go1_24_2
             gopls
@@ -35,14 +35,13 @@
             gcc
             gnumake
             python3
-            glibc
             rsync
             fd
             ripgrep
             fzf
             fzf-zsh
             sqlite
-        ];
+        ] ++ lib.optionals stdenv.isLinux [ glibc ];
 
         shellHook = ''
             export ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
@@ -61,9 +60,9 @@
         '';
     };
 
-    packages.${system}.dev = pkgs.writeShellScriptBin "dev" ''
+    packages.dev = pkgs.writeShellScriptBin "dev" ''
         exec nix develop ${self}#default
     '';
-
-  };
+  }
+  );
 }

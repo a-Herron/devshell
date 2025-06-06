@@ -31,6 +31,7 @@
             zsh
             oh-my-zsh
             neovim
+            tmux
 
             gcc
             gnumake
@@ -61,7 +62,7 @@
     };
 
     packages.dev = pkgs.writeShellScriptBin "dev" ''
-        exec nix develop ${self}#default
+        exec nix develop github:a-Herron/devshell#devShell.${system}
     '';
   }
   );

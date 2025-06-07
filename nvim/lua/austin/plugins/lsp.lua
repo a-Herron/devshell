@@ -33,6 +33,9 @@ return {
 
         vim.lsp.enable('gopls')
 
+        vim.lsp.config('yamlls', {})
+        vim.lsp.enable('yamlls')
+
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})
         vim.keymap.set("n", "K", vim.lsp.buf.hover,{ desc = "Hover"})

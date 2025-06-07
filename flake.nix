@@ -25,13 +25,17 @@
             gopls
             gofumpt
             golangci-lint
+
             tree-sitter
             nodejs_24
+            neovim
+
             git
             zsh
             oh-my-zsh
-            neovim
             tmux
+
+            yaml-language-server
 
             gcc
             gnumake
@@ -47,15 +51,18 @@
         shellHook = ''
             export ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
             export NVIM_APPNAME=${nvimAppName}
-            export ZDOTDIR="$HOME/.config/zsh/"
+            export ZDOTDIR="$HOME/.config/devshell/zsh/"
 
             mkdir -p "$ZDOTDIR"
-            cp -f "${self}/.zshrc" "$HOME/.config/zsh/.zshrc"
+            cp -f "${self}/.zshrc" "$HOME/.config/devshell/zsh/.zshrc"
 
-            mkdir -p "$HOME/.config/$NVIM_APPNAME"
+            mkdir -p "$HOME/.config/devshell/tmux"
+            rsync -av --delete "${self}/tmux/" "$HOME/.config/devshell/tmux/"
+            alias tmux="tmux -f $HOME/.config/devshell/tmux/tmux.conf -L devshell"
+            mkdir -p "$HOME/.config/devshell/$NVIM_APPNAME"
 
-            rsync -av --delete "${self}/nvim/" "$HOME/.config/$NVIM_APPNAME/"
-            chmod -R u+rw "$HOME/.config/$NVIM_APPNAME/"
+            rsync -av --delete "${self}/nvim/" "$HOME/.config/devshell/$NVIM_APPNAME/"
+            chmod -R u+rw "$HOME/.config/devshell/$NVIM_APPNAME/"
 
             exec zsh
         '';

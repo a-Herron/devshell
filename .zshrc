@@ -12,3 +12,4 @@ source <(fzf --zsh)
 
 alias g="git"
 
+alias tmux="tmux -f $HOME/.config/devshell/tmux/tmux.conf -L devshell"

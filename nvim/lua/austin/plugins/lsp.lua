@@ -50,6 +50,7 @@ return {
 
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "Rename"})
         vim.keymap.set("n", "K", vim.lsp.buf.hover,{ desc = "Hover"})
         vim.keymap.set("n", "<leader>cs", vim.lsp.buf.signature_help, {desc = "Signature help"})
         vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, {desc = "Signature help"})

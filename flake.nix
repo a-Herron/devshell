@@ -16,7 +16,7 @@
         hash = "sha256-ncd/+twW2DehvzLZnGJMtN8GR87nsRnt2eexvMBfLgA=";
       };
     });
-    nvimAppName = "mynvim";
+    nvimAppName = "devshell-nvim";
 
   in {
     devShell = pkgs.mkShell {
@@ -25,6 +25,10 @@
             gopls
             gofumpt
             golangci-lint
+
+            typescript
+            typescript-language-server
+            vue-language-server
 
             tree-sitter
             nodejs_24
@@ -59,10 +63,11 @@
             mkdir -p "$HOME/.config/devshell/tmux"
             rsync -av --delete "${self}/tmux/" "$HOME/.config/devshell/tmux/"
             alias tmux="tmux -f $HOME/.config/devshell/tmux/tmux.conf -L devshell"
+
             mkdir -p "$HOME/.config/devshell/$NVIM_APPNAME"
 
-            rsync -av --delete "${self}/nvim/" "$HOME/.config/devshell/$NVIM_APPNAME/"
-            chmod -R u+rw "$HOME/.config/devshell/$NVIM_APPNAME/"
+            rsync -av --delete "${self}/nvim/" "$HOME/.config/$NVIM_APPNAME/"
+            chmod -R u+rw "$HOME/.config/$NVIM_APPNAME/"
 
             exec zsh
         '';

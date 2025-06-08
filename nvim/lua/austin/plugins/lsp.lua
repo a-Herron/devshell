@@ -30,11 +30,23 @@ return {
                 }
             }
         })
-
         vim.lsp.enable('gopls')
+
 
         vim.lsp.config('yamlls', {})
         vim.lsp.enable('yamlls')
+
+        vim.lsp.config('vue_ls', {
+            -- add filetypes for typescript, javascript and vue
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+            init_options = {
+              vue = {
+                -- disable hybrid mode
+                hybridMode = false,
+              },
+            },
+        })
+        vim.lsp.enable('vue_ls')
 
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})

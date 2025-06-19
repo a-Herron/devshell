@@ -25,10 +25,12 @@
             gopls
             gofumpt
             golangci-lint
+            delve
 
             typescript
             typescript-language-server
             vue-language-server
+            eslint
 
             tree-sitter
             nodejs_24

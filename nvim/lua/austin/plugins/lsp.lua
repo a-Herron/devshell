@@ -48,6 +48,8 @@ return {
         })
         vim.lsp.enable('vue_ls')
 
+        vim.lsp.enable('zls')
+
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "Rename"})

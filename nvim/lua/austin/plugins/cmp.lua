@@ -6,6 +6,7 @@ return {
          keymap = { 
              preset = 'default',
 
+            ["<C-h>"] = {function(cmp) cmp.show() end},
             ["<Tab>"] = { 'select_and_accept', 'fallback' },
          },
          completion = {

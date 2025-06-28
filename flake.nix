@@ -21,6 +21,9 @@
   in {
     devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
+            zig
+            zls
+
             go1_24_2
             gopls
             gofumpt
